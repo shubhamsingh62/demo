@@ -23,7 +23,16 @@
 <br>
 <br>
 
-<button onclick="add()">submit</button>
+<p>Search:</p>
+<input type="Search" id="input" name="" onkeyup="searchFilter()" placeholder=" Search by name">
+
+<br>
+<br>
+<select id="select" onchange="selectFilter()"></select>
+
+<br>
+<br>
+<button onclick="add()">add</button>
 <br>
 <br>
 <button onclick="editRow()">edit</button>
@@ -35,7 +44,7 @@
 <br>
 <table style="width: 100%;" border="" id="mtable">
 	
-   </table>
+</table>
 <script type="text/javascript" src="add.js"></script>
 </body>
 </html>

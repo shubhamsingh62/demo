@@ -62,10 +62,6 @@ a{
   color: white;
   padding:15%;
 }
-/*.one:hover {
-  background-color: #999;
-  color: white;
-}*/
 
 @media (min-width: 769px) {
 	.header,.main{

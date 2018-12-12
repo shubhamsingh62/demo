@@ -10,6 +10,7 @@ function add(){
       console.log("helloooo")
       addRow(fname,Lname,age,email)
       selectRow()
+      addOption(fname)
 
         
 }
@@ -17,7 +18,7 @@ function add(){
 
 function addRow(f,l,a,e){
     
-
+    
     let table= document.getElementById('mtable')
         row = table.insertRow(table.length)
         cell1 = row.insertCell(0)
@@ -72,5 +73,45 @@ function deleteRow(){
     document.getElementById('Lname').value = ""
     document.getElementById('age').value = ""
     document.getElementById('email').value = ""
+}
+
+function search(input){
+   let table = document.getElementById("mtable");
+   let tr = table.getElementsByTagName("tr");
+   for (let i = 0; i < tr.length; i++) {
+    let td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+        let txtValue = td.textContent || td.innerText;
+        if (txtValue.indexOf(input) > -1) {
+        tr[i].style.display = "";
+      } 
+      else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+   
+}
+
+function searchFilter(){
+
+   let input = document.getElementById("input").value;
+   search(input)
+   
+}
+
+function addOption(f){
+
+    let select = document.getElementById('select');
+    let option = document.createElement('option')
+    option.text = f;
+    select.add(option ,select[0])
+}
+
+function selectFilter() {
+
+   let select = document.getElementById("select").value;
+   search(select)
+   
 }
 
